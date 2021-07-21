@@ -1,18 +1,15 @@
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Shop {
     private List<Goods> myArrayList;
+    public Shop() {
+        this.myArrayList = new ArrayList<>();
+    }
 
     public List<Goods> getMyArrayList() {
         return myArrayList;
     }
 
-    public void setMyArrayList(List<Goods> myArrayList) {
-        this.myArrayList = myArrayList;
-    }
 
     public void addGoods(Goods goods) {
         if (myArrayList.size() == 0) {
@@ -30,8 +27,13 @@ public class Shop {
     }
 
 
-    public List<Goods> getAllGoodsinAscending() {
+    public List<Goods> getAllGoodsInAscending() {
         Collections.sort(myArrayList);
+        System.out.println(myArrayList.toString());
+        return myArrayList;
+    }
+    public List<Goods> getAllGoodsInWaning() {
+        Collections.sort(myArrayList, Collections.reverseOrder());
         System.out.println(myArrayList.toString());
         return myArrayList;
     }
